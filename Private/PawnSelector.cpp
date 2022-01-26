@@ -73,7 +73,11 @@ void APawnSelector::BeginPlay()
 	UE_LOG(LogTemp, Warning, TEXT("Player 2 input%s"), *FString::FromInt(RandVal));
 	//
 	// set the location of each Sphere 
-	MeshComponent->SetWorldLocation(FVector(-600.f, 900.f, 500.f));
+	
+	for (int i = 0; i < 9; i++) {
+		Spheres[i]->SetMaterial(0, WhiteMaterial);
+	}
+	SpringArm->SetWorldLocation(FVector(-600.f, 900.f, 500.f));
 	Spheres[0]->SetWorldLocation(FVector(0.f, 100.f, 100.f));
 	Spheres[1]->SetWorldLocation(FVector(0.f, 300.f, 100.f));
 	Spheres[2]->SetWorldLocation(FVector(0.f, 500.f, 100.f));
